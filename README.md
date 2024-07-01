@@ -38,7 +38,7 @@ multipass launch \
 --disk 50G \
 --memory 4Gb \
 --name k8sworker \
---cloud-init <(envsubst '$K8S_CP_IPV4,$K8S_JOIN_TOKEN,$K8S_TOKEN_CA_CERT_HASH' cloud-init/worker.k8s.cloud-config.yaml)
+--cloud-init <(envsubst '$K8S_CP_IPV4,$K8S_JOIN_TOKEN,$K8S_TOKEN_CA_CERT_HASH' < cloud-init/worker.k8s.cloud-config.yaml)
 ```
 
 Use the `kubectl get nodes` command to verify the worker(s) connected:
